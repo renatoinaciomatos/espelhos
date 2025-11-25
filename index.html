@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto Eletrônico Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ponto Eletrônico Pessoal ⏱️</h1>
+        
+        <div id="status-area">
+            <p><strong>Salário Mensal Atual:</strong> <span id="salario-mensal">R$ 0,00</span></p>
+            <p id="mes-inicio-display">Mês iniciado em: N/A</p>
+        </div>
+        
+        <div class="buttons-container">
+            <button id="iniciar-mes-btn" class="btn primary">Iniciar Mês</button>
+            <button id="estudante-btn" class="btn task">Estudante (R$0,15/min)</button>
+            <button id="baba-btn" class="btn task">Babá (R$0,25/min)</button>
+            <button id="diarista-btn" class="btn task">Diarista (R$0,35/min)</button>
+            <button id="esqueceu-btn" class="btn secondary">Esqueceu? (Ajuste)</button>
+        </div>
+
+        <div id="registro-atual">
+            <h2>Registro de Tarefa Atual</h2>
+            <p>Status: <span id="tarefa-status">Parado</span></p>
+            <p>Início: <span id="tarefa-inicio">N/A</span></p>
+            <p>Função: <span id="tarefa-funcao">Nenhuma</span></p>
+        </div>
+
+        <div id="historico">
+            <h2>Histórico de Ganhos</h2>
+            <ul id="historico-lista">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
