@@ -140,24 +140,26 @@
     <p class="instructions">Prof. Renato Inácio Matos - renato.matos@ifma.edu.br</p>
 
     <div class="container">
-                                <div class="controls" style="display: flex; flex-direction: column; gap: 15px;">
-            <!-- LINHA 1: Espelho com tamanho justo e Zoom ocupando todo o resto -->
-            <div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; width: 100%; align-items: end;">
-                <div class="control-group" style="min-width: 150px;">
+                                
+        
+                <div class="controls" style="display: flex; flex-direction: column; gap: 15px; background: var(--card-bg); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <!-- LINHA 1: Tipo de Espelho ajustado ao conteúdo e Zoom expandido ao máximo -->
+            <div style="display: flex; gap: 20px; width: 100%; align-items: flex-end; flex-wrap: wrap;">
+                <div class="control-group" style="flex: 0 1 auto; min-width: 160px;">
                     <label for="mirrorType">Tipo de Espelho</label>
                     <select id="mirrorType">
                         <option value="concave">Côncavo</option>
                         <option value="convex">Convexo</option>
                     </select>
                 </div>
-                <div class="control-group">
+                <div class="control-group" style="flex: 1 1 0%;">
                     <label for="zoomRange">Zoom: <span id="zoomVal">1.0</span>x</label>
                     <input type="range" id="zoomRange" min="0.1" max="2.0" step="0.1" value="1.0">
                 </div>
             </div>
 
-            <!-- LINHA 2: Os outros 3 controles divididos igualmente -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%;">
+            <!-- LINHA 2: Os outros 3 controles divididos de forma 100% igualitária na horizontal -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; width: 100%;">
                 <div class="control-group">
                     <label for="focalLength">Distância Focal (f): <span id="focalVal">120</span>mm</label>
                     <input type="range" id="focalLength" min="50" max="250" value="120">
@@ -172,7 +174,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <div class="canvas-container">
