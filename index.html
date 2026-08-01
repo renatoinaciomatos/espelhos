@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espelhos Esféricos - Renato</title>
     <style>
-        .control-group:first-child {
-    grid-column: 1 / -1;
-    margin-bottom: 10px; /* Adiciona um espaço extra abaixo dele */
+      
+        .controls {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+
 
         :root {
             --bg-color: #f0f2f5;
@@ -141,10 +148,9 @@
 
     <div class="container">
                                 
-        
-                <div class="controls" style="display: flex; flex-direction: column; gap: 15px; background: var(--card-bg); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div class="controls">
             <!-- LINHA 1: Tipo de Espelho ajustado ao conteúdo e Zoom expandido ao máximo -->
-            <div style="display: flex; gap: 20px; width: 100%; align-items: flex-end; flex-wrap: wrap;">
+            <div style="display: flex; gap: 20px; width: 100%; align-items: flex-end;">
                 <div class="control-group" style="flex: 0 1 auto; min-width: 160px;">
                     <label for="mirrorType">Tipo de Espelho</label>
                     <select id="mirrorType">
@@ -158,7 +164,7 @@
                 </div>
             </div>
 
-                      <!-- LINHA 2: Os outros 3 controles divididos de forma 100% igualitária na horizontal -->
+            <!-- LINHA 2: Os outros 3 controles divididos de forma 100% igualitária na horizontal -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; width: 100%;">
                 <div class="control-group" style="display: flex; flex-direction: column;">
                     <label for="focalLength">Distância Focal (f): <span id="focalVal">120</span>mm</label>
@@ -173,7 +179,6 @@
                     <input type="range" id="hoRange" min="10" max="100" step="1" value="60">
                 </div>
             </div>
-
         </div>
 
 
