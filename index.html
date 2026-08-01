@@ -140,10 +140,10 @@
     <p class="instructions">Prof. Renato Inácio Matos - renato.matos@ifma.edu.br</p>
 
     <div class="container">
-                        <div class="controls" style="display: flex; flex-direction: column; gap: 15px;">
-            <!-- LINHA DE CIMA: Tipo de Espelho e Zoom dividindo o espaço -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%;">
-                <div class="control-group">
+                                <div class="controls" style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- LINHA 1: Espelho com tamanho justo e Zoom ocupando todo o resto -->
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; width: 100%; align-items: end;">
+                <div class="control-group" style="min-width: 150px;">
                     <label for="mirrorType">Tipo de Espelho</label>
                     <select id="mirrorType">
                         <option value="concave">Côncavo</option>
@@ -156,8 +156,8 @@
                 </div>
             </div>
 
-            <!-- LINHA DE BAIXO: Demais controles do objeto e foco -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%;">
+            <!-- LINHA 2: Os outros 3 controles divididos igualmente -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%;">
                 <div class="control-group">
                     <label for="focalLength">Distância Focal (f): <span id="focalVal">120</span>mm</label>
                     <input type="range" id="focalLength" min="50" max="250" value="120">
@@ -172,6 +172,7 @@
                 </div>
             </div>
         </div>
+
 
 
         <div class="canvas-container">
