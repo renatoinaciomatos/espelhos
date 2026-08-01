@@ -158,21 +158,22 @@
                 </div>
             </div>
 
-            <!-- LINHA 2: Os outros 3 controles divididos de forma 100% igualitária na horizontal -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; width: 100%;">
-                <div class="control-group">
+                      <!-- LINHA 2: Os outros 3 controles divididos de forma 100% igualitária na horizontal -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; width: 100%;">
+                <div class="control-group" style="display: flex; flex-direction: column;">
                     <label for="focalLength">Distância Focal (f): <span id="focalVal">120</span>mm</label>
                     <input type="range" id="focalLength" min="50" max="250" value="120">
                 </div>
-                <div class="control-group">
+                <div class="control-group" style="display: flex; flex-direction: column;">
                     <label for="pRange">Posição do Objeto (p): <span id="pRangeVal">180</span>mm</label>
                     <input type="range" id="pRange" min="10" max="1000" step="1" value="180">
                 </div>
-                <div class="control-group">
+                <div class="control-group" style="display: flex; flex-direction: column;">
                     <label for="hoRange">Altura do Objeto (o): <span id="hoRangeVal">60</span>mm</label>
                     <input type="range" id="hoRange" min="10" max="100" step="1" value="60">
                 </div>
             </div>
+
         </div>
 
 
