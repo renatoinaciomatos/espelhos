@@ -135,7 +135,7 @@
     <p class="instructions">Prof. Renato Inácio Matos - renato.matos@ifma.edu.br</p>
 
     <div class="container">
-        <div class="controls">
+                <div class="controls">
             <div class="control-group">
                 <label for="mirrorType">Tipo de Espelho</label>
                 <select id="mirrorType">
@@ -150,6 +150,15 @@
             <div class="control-group">
                 <label for="zoomRange">Zoom: <span id="zoomVal">1.0</span>x</label>
                 <input type="range" id="zoomRange" min="0.1" max="2.0" step="0.1" value="1.0">
+            </div>
+            <!-- NOVOS CONTROLES ABAIXO PARA O CELULAR -->
+            <div class="control-group">
+                <label for="pRange">Posição do Objeto (p): <span id="pRangeVal">180</span>mm</label>
+                <input type="range" id="pRange" min="10" max="1000" step="1" value="180">
+            </div>
+            <div class="control-group">
+                <label for="hoRange">Altura do Objeto (o): <span id="hoRangeVal">60</span>mm</label>
+                <input type="range" id="hoRange" min="10" max="100" step="1" value="60">
             </div>
         </div>
 
@@ -200,7 +209,11 @@
         const focalValLabel = document.getElementById('focalVal');
         const zoomRangeInput = document.getElementById('zoomRange');
         const zoomValLabel = document.getElementById('zoomVal');
-        
+        const pRangeInput = document.getElementById('pRange');
+        const pRangeValLabel = document.getElementById('pRangeVal');
+        const hoRangeInput = document.getElementById('hoRange');
+        const hoRangeValLabel = document.getElementById('hoRangeVal');
+
         const statP = document.getElementById('statP');
         const statPPrime = document.getElementById('statPPrime');
         const statHO = document.getElementById('statHO');
@@ -238,6 +251,17 @@
         zoomRangeInput.addEventListener('input', (e) => {
             state.zoom = parseFloat(e.target.value);
             zoomValLabel.textContent = state.zoom.toFixed(1);
+            update();
+        });
+        pRangeInput.addEventListener('input', (e) => {
+            state.p = parseInt(e.target.value);
+            pRangeValLabel.textContent = state.p;
+            update();
+        });
+
+        hoRangeInput.addEventListener('input', (e) => {
+            state.objHeight = parseInt(e.target.value);
+            hoRangeValLabel.textContent = state.objHeight;
             update();
         });
 
@@ -294,6 +318,11 @@
     
     state.objHeight = newHeight;
 }
+            // Sincroniza a posição dos sliders visuais caso o arrasto manual ocorra
+            pRangeInput.value = state.p;
+            pRangeValLabel.textContent = state.p;
+            hoRangeInput.value = state.objHeight;
+            hoRangeValLabel.textContent = state.objHeight;
 
             update();
         }
