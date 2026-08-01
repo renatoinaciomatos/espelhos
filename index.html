@@ -140,32 +140,39 @@
     <p class="instructions">Prof. Renato Inácio Matos - renato.matos@ifma.edu.br</p>
 
     <div class="container">
-                <div class="controls">
-            <div class="control-group">
-                <label for="mirrorType">Tipo de Espelho</label>
-                <select id="mirrorType">
-                    <option value="concave">Côncavo</option>
-                    <option value="convex">Convexo</option>
-                </select>
+                        <div class="controls" style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- LINHA DE CIMA: Tipo de Espelho e Zoom dividindo o espaço -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%;">
+                <div class="control-group">
+                    <label for="mirrorType">Tipo de Espelho</label>
+                    <select id="mirrorType">
+                        <option value="concave">Côncavo</option>
+                        <option value="convex">Convexo</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="zoomRange">Zoom: <span id="zoomVal">1.0</span>x</label>
+                    <input type="range" id="zoomRange" min="0.1" max="2.0" step="0.1" value="1.0">
+                </div>
             </div>
-            <div class="control-group">
-                <label for="focalLength">Distância Focal (f): <span id="focalVal">120</span>mm</label>
-                <input type="range" id="focalLength" min="50" max="250" value="120">
-            </div>
-            <div class="control-group">
-                <label for="zoomRange">Zoom: <span id="zoomVal">1.0</span>x</label>
-                <input type="range" id="zoomRange" min="0.1" max="2.0" step="0.1" value="1.0">
-            </div>
-            <!-- NOVOS CONTROLES ABAIXO PARA O CELULAR -->
-            <div class="control-group">
-                <label for="pRange">Posição do Objeto (p): <span id="pRangeVal">180</span>mm</label>
-                <input type="range" id="pRange" min="10" max="1000" step="1" value="180">
-            </div>
-            <div class="control-group">
-                <label for="hoRange">Altura do Objeto (o): <span id="hoRangeVal">60</span>mm</label>
-                <input type="range" id="hoRange" min="10" max="100" step="1" value="60">
+
+            <!-- LINHA DE BAIXO: Demais controles do objeto e foco -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%;">
+                <div class="control-group">
+                    <label for="focalLength">Distância Focal (f): <span id="focalVal">120</span>mm</label>
+                    <input type="range" id="focalLength" min="50" max="250" value="120">
+                </div>
+                <div class="control-group">
+                    <label for="pRange">Posição do Objeto (p): <span id="pRangeVal">180</span>mm</label>
+                    <input type="range" id="pRange" min="10" max="1000" step="1" value="180">
+                </div>
+                <div class="control-group">
+                    <label for="hoRange">Altura do Objeto (o): <span id="hoRangeVal">60</span>mm</label>
+                    <input type="range" id="hoRange" min="10" max="100" step="1" value="60">
+                </div>
             </div>
         </div>
+
 
         <div class="canvas-container">
             <canvas id="opticsCanvas" width="900" height="450"></canvas>
